@@ -1,0 +1,23 @@
+#Load library
+library(RMySQL)
+library(ggplot2)
+library(matrixStats)
+
+password1 <- 'XXX'
+
+#Connect to MySQL server
+mysqlconnection = dbConnect(MySQL(),user='root',password=password1,dbname='movies_db',host='localhost')
+
+#Read the table in the movies_db database
+result = dbSendQuery(mysqlconnection,"select * from movie_reviews")
+
+#Create a new data frame from the MySQL table
+moviereview_df=fetch(result,n=6)
+
+#Display the table of reviews
+print(moviereview_df)
+
+#Analyze the reviews: create a new data frame with the average score for each movie
+averagescore <- colMeans(moviereview_df[,3:8])
+print(averagescore)
+
