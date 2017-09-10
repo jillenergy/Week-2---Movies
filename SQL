@@ -1,4 +1,6 @@
-/* I had difficulty creating the code out of MySQL workbench. My table successfully loaded into R, and my R code is included here and on Rpubs.
+-- I had difficulty creating the code out of MySQL workbench. 
+-- My table successfully loaded into R, and my R code is included here and on Rpubs. 
+-- I used "Reverse Engineer" in MySQL workbench and this is what was created (below). 
 
 
 -- -----------------------------------------------------
